@@ -68,16 +68,13 @@ public class UserRepository {
 
     public void deleteHomeDetails(int id) {
         try {
-            Connection connection = null;
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM public.homes WHERE id = ?;");
-
-
-
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
 }
